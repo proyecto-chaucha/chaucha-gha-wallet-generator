@@ -1,6 +1,8 @@
 name: "Chaucha.cl Crypto Wallet Generator Github Action"
 description: "Provides a simple function to generate a new Chaucha Wallet Address"
 author: "Camilo Castro <camilo@ninjas.cl>"
+icon: "code"
+color: "green"
 inputs:
   value:
     description: "String value to create a new wallet address. Empty value will generate a random address."
