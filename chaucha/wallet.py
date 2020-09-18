@@ -4,6 +4,10 @@ Wallet related functions
 from . import crypto
 
 def new(string = crypto.uid()):
+    
+    if not string or str(string).strip() == '':
+        string = crypto.uid()
+
     privkey = crypto.new('sha256', str(string).encode()).hexdigest()
 
     b58_PUBKEY_ADDRESS = str(crypto.CHAUCHA_PUBKEY_ADDRESS)

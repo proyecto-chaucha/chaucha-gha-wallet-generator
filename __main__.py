@@ -1,14 +1,21 @@
 import os
+import sys
 import chaucha
 
-
 def main():
-    # my_input = os.environ["INPUT_MYINPUT"]
 
-    # my_output = f"Hello {my_input}"
+    arg = ""
+    
+    try:
+        arg = sys.argv[1]
+    except:
+        pass
+    
+    value = os.getenv("INPUT_VALUE") or arg
+    privkey, pubkey = chaucha.wallet.new(value)
 
-    # print(f"::set-output name=myOutput::{my_output}")
-    print(chaucha.wallet.new())
+    print(f"::set-output name=privkey::{privkey}")
+    print(f"::set-output name=pubkey::{pubkey}")
 
 if __name__ == "__main__":
     main()
